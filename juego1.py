@@ -13,21 +13,20 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
-#Creando un juego para sorprender a tu novia
-#Cargar Imagenes
+
 def load_image(name, size=None):
     try:
-        img = pygame.image.load(os.path.join("assets", name))#En este caso la carpeta donde guardo mis imagenes se llama assets aunque puede tener cualquier nombre 
-        if size:#La carpeta con las imagenes tiene que estar en la misma carpeta que el archivo py
+        img = pygame.image.load(os.path.join("assets", name)) 
+        if size:
             img = pygame.transform.scale(img, size)#
         return img
     except:
         return None
 
-background_img = load_image("fondo.jpeg", (WIDTH, HEIGHT))#Aqui cargamos la imagen del enemigo, del fondo etc. puede ser cualquier nombre y cualquier extension
-rocket_img = load_image("godzilla.png", (70, 100))#Vamos a la terminal e instalamos pygame
+background_img = load_image("fondo.jpeg", (WIDTH, HEIGHT))
+rocket_img = load_image("godzilla.png", (70, 100))
 enemy_img = load_image("kong.webp", (60, 60))  
-projectile_img = load_image("corazon.webp", (20, 30))  #Ahora iniciamos el juego escribiendo #python 'Nombre de nuestro juego.py'
+projectile_img = load_image("corazon.webp", (20, 30)) 
 heart_img = load_image("heart.webp", (30, 30)) or None  
 bonus_img = load_image("mothra.png", (30, 30)) or None  
 
